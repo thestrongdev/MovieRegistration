@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model MovieRegistr.Models.AddMovieResultViewModel
+
+<ul class="list-group">
+
+    @foreach (var movie in Model.Movies)
+    {
+    <li class="list-group-item">
+
+        <p>Movie @movie.Title has been registered</p>
+
+        <p>ID: @movie.ID</p>
+        <p>Title: @movie.Title</p>
+        <p>Genre: @movie.Genre</p>
+        <p>Year: @movie.Year</p>
+        <p>Actors: @movie.Actors</p>
+        <p>Directors: @movie.Directors</p>
+
+        <a asp-controller="MovieRegistration" asp-action="AddMovieForm">Add Another Movie</a>
+
+    </li>
+    }
+
+</ul>
